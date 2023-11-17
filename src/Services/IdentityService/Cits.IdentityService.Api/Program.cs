@@ -1,0 +1,26 @@
+var builder = WebApplication.CreateBuilder(args);
+
+//注入微服务默认服务
+builder.AddServiceDefaults();
+//注入控制器相关服务
+builder.Services.AddControllers();
+//注入NSwag
+builder.Services.ConfigureNSwag();
+
+var app = builder.Build();
+
+//输出程序启动日志
+app.Logger.StartingApp(DateTime.Now);
+//注册程序生命周期事件
+app.RegisterApplicationLifeTimeEvents();
+
+//注册NSwag中间件
+app.UseNSwag();
+
+app.MapDefaultEndpoints();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

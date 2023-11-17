@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cits.IdentityService.Application.Contracts\Cits.IdentityService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Cits.IdentityService.Domain\Cits.IdentityService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
