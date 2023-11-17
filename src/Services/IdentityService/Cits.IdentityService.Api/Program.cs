@@ -6,6 +6,8 @@ builder.AddServiceDefaults();
 builder.Services.AddControllers();
 //注入NSwag
 builder.Services.ConfigureNSwag();
+//注入FreeSql
+builder.ConfigureFreeSql();
 
 var app = builder.Build();
 
@@ -13,6 +15,8 @@ var app = builder.Build();
 app.Logger.StartingApp(DateTime.Now);
 //注册程序生命周期事件
 app.RegisterApplicationLifeTimeEvents();
+//执行FreeSql的一些初始化操作
+app.InitFreeSql();
 
 //注册NSwag中间件
 app.UseNSwag();
