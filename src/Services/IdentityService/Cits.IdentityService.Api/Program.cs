@@ -8,6 +8,8 @@ builder.Services.AddControllers();
 builder.Services.ConfigureNSwag();
 //注入FreeSql
 builder.ConfigureFreeSql();
+//注入OpenIddict相关
+builder.ConfigureOpenIddict();
 
 var app = builder.Build();
 
@@ -23,6 +25,9 @@ app.UseNSwag();
 
 app.MapDefaultEndpoints();
 
+app.UseRouting();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

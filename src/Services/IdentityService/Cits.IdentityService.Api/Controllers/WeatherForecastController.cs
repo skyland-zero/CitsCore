@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OpenIddict.Validation.AspNetCore;
 
 namespace Cits.IdentityService.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)] //设置认证和默认Schemes
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
