@@ -126,11 +126,11 @@ public class CitsOpenIddictFreeSqlApplication<TKey, TAuthorization, TToken>
     /// Gets the list of the authorizations associated with this application.
     /// </summary>
     [Navigate(nameof(CitsOpenIddictFreeSqlToken.ApplicationId))]
-    public virtual List<TAuthorization> Authorizations { get; set; }
+    public virtual List<TAuthorization>? Authorizations { get; set; }
 
     /// <summary>
     /// Gets the list of the tokens associated with this application.
     /// </summary>
     [Navigate(nameof(CitsOpenIddictFreeSqlToken.ApplicationId))]
-    public virtual List<TToken> Tokens { get; set; }
+    public virtual List<TToken>? Tokens { get; set; }
 }

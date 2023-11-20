@@ -92,8 +92,8 @@ public class CitsOpenIddictFreeSqlAuthorization<TKey, TApplication, TToken>
     /// Gets the list of tokens associated with the current authorization.
     /// </summary>
     [Navigate(nameof(CitsOpenIddictFreeSqlToken.AuthorizationId))]
-    public virtual List<TToken> Tokens { get; set; }
+    public virtual List<TToken>? Tokens { get; set; }
 
     [Navigate(nameof(ApplicationId))]
-    public virtual CitsOpenIddictFreeSqlApplication Application { get; set; }
+    public virtual CitsOpenIddictFreeSqlApplication? Application { get; set; }
 }

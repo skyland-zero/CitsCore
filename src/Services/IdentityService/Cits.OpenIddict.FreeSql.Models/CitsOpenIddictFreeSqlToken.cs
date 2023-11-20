@@ -116,11 +116,11 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// 导航属性
     /// </summary>
     [Navigate(nameof(AuthorizationId))]
-    public virtual TAuthorization Authorization { get; set; }
+    public virtual TAuthorization? Authorization { get; set; }
 
     /// <summary>
     /// 导航属性
     /// </summary>
     [Navigate(nameof(ApplicationId))]
-    public virtual TApplication Application { get; set; }
+    public virtual TApplication? Application { get; set; }
 }
