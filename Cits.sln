@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.ServiceDefaults", "src\Services\Cits.ServiceDefaults\Cits.ServiceDefaults.csproj", "{57517B2A-B4FE-4758-A1F0-C6E9541582B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.AppHost.AppHost", "src\Cits.AppHost\Cits.AppHost.AppHost\Cits.AppHost.AppHost.csproj", "{3111511B-0235-4822-B1A4-EF1162E17D66}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityService", "IdentityService", "{C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Api", "src\Services\IdentityService\Cits.IdentityService.Api\Cits.IdentityService.Api.csproj", "{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC}"
@@ -25,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.Core.Domain", "src\Services\Cits.Core.Domain\Cits.Core.Domain.csproj", "{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.OpenIddict.FreeSql.Models", "src\Services\IdentityService\Cits.OpenIddict.FreeSql.Models\Cits.OpenIddict.FreeSql.Models.csproj", "{67A49515-5A3A-404D-9B18-96FD3E8C091F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.OpenIddict.FreeSql.Models", "src\Services\IdentityService\Cits.OpenIddict.FreeSql.Models\Cits.OpenIddict.FreeSql.Models.csproj", "{67A49515-5A3A-404D-9B18-96FD3E8C091F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.OpenIddict.FreeSql", "src\Services\IdentityService\Cits.OpenIddict.FreeSql\Cits.OpenIddict.FreeSql.csproj", "{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.OpenIddict.FreeSql", "src\Services\IdentityService\Cits.OpenIddict.FreeSql\Cits.OpenIddict.FreeSql.csproj", "{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.AppHost", "src\Cits\Cits.AppHost\Cits.AppHost.csproj", "{0BC8CE8B-C936-49BB-8160-2116AC0365A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{57517B2A-B4FE-4758-A1F0-C6E9541582B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57517B2A-B4FE-4758-A1F0-C6E9541582B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57517B2A-B4FE-4758-A1F0-C6E9541582B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3111511B-0235-4822-B1A4-EF1162E17D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3111511B-0235-4822-B1A4-EF1162E17D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3111511B-0235-4822-B1A4-EF1162E17D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3111511B-0235-4822-B1A4-EF1162E17D66}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +71,10 @@ Global
 		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,7 +82,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5D202AEC-814B-4E90-BC1A-C02DC7D7789B} = {9E85E4ED-E62F-4523-887B-BDC881737DFE}
 		{57517B2A-B4FE-4758-A1F0-C6E9541582B8} = {5D202AEC-814B-4E90-BC1A-C02DC7D7789B}
-		{3111511B-0235-4822-B1A4-EF1162E17D66} = {9E85E4ED-E62F-4523-887B-BDC881737DFE}
 		{C1F7DA6B-2EDB-456C-BC16-FEF37FA72625} = {5D202AEC-814B-4E90-BC1A-C02DC7D7789B}
 		{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{C7C093DC-F1EE-473A-857C-853772035364} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
@@ -92,6 +91,7 @@ Global
 		{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17} = {5D202AEC-814B-4E90-BC1A-C02DC7D7789B}
 		{67A49515-5A3A-404D-9B18-96FD3E8C091F} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
+		{0BC8CE8B-C936-49BB-8160-2116AC0365A0} = {9E85E4ED-E62F-4523-887B-BDC881737DFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7669EF27-891D-4E9F-BFF6-C2512126492F}
