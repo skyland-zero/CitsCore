@@ -1,6 +1,3 @@
 ﻿namespace Cits.OpenIddict.FreeSql;
 
-public record CitsOpenIddictFreeSqlMark
-{
-
-}
+public record CitsOpenIddictFreeSqlMark();

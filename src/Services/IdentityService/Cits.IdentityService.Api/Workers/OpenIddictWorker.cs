@@ -15,10 +15,6 @@ public class OpenIddictWorker : IHostedService
     {
         await using var scope = _serviceProvider.CreateAsyncScope();
 
-        var context = scope.ServiceProvider.GetRequiredService<OpenIddictDbContext>();
-
-        await context.Database.EnsureCreatedAsync();
-
 
         var manager = scope.ServiceProvider.GetRequiredService<IOpenIddictApplicationManager>();
 

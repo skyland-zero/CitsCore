@@ -1,9 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cits.OpenIddict.FreeSql.Models;
-
-
 
 /// <summary>
 /// Represents an OpenIddict application.

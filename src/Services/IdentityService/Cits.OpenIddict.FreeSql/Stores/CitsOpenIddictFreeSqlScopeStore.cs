@@ -1,18 +1,11 @@
 ﻿using Cits.OpenIddict.FreeSql.Models;
-using FreeSql;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Cits.OpenIddict.FreeSql.Stores;
 
@@ -63,8 +56,8 @@ public class CitsOpenIddictFreeSqlScopeStore<TScope> : IOpenIddictScopeStore<TSc
         {
             throw new ArgumentNullException(nameof(scope));
         }
-        
-        await FreeSql.Delete<TScope>(scope).ExecuteAffrowsAsync(cancellationToken);  
+
+        await FreeSql.Delete<TScope>(scope).ExecuteAffrowsAsync(cancellationToken);
     }
 
     /// <inheritdoc/>
@@ -75,7 +68,7 @@ public class CitsOpenIddictFreeSqlScopeStore<TScope> : IOpenIddictScopeStore<TSc
             throw new ArgumentException(SR.GetResourceString(SR.ID0195), nameof(identifier));
         }
 
-        return await FreeSql.Select<TScope>().Where(scope => scope.Id == identifier).ToOneAsync(cancellationToken);   
+        return await FreeSql.Select<TScope>().Where(scope => scope.Id == identifier).ToOneAsync(cancellationToken);
     }
 
     /// <inheritdoc/>

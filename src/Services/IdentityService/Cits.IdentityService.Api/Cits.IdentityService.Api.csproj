@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Cits.ServiceDefaults\Cits.ServiceDefaults.csproj" />
     <ProjectReference Include="..\Cits.IdentityService.Application\Cits.IdentityService.Application.csproj" />
+    <ProjectReference Include="..\Cits.OpenIddict.FreeSql\Cits.OpenIddict.FreeSql.csproj" />
   </ItemGroup>
 
   <ItemGroup>

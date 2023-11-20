@@ -9,7 +9,8 @@ builder.Services.ConfigureNSwag();
 //注入FreeSql
 builder.ConfigureFreeSql();
 //注入OpenIddict相关
-builder.ConfigureOpenIddict();
+//builder.ConfigureOpenIddictWithEfCore();
+builder.ConfigureOpenIddictWithFreeSql();
 
 var app = builder.Build();
 

@@ -1,23 +1,16 @@
 ﻿using Cits.OpenIddict.FreeSql.Models;
-using FreeSql;
 using Microsoft.Extensions.Caching.Memory;
 using System.Collections.Immutable;
-using System.ComponentModel;
-using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace Cits.OpenIddict.FreeSql.Stores;
 
 public class CitsOpenIddictFreeSqlTokenStore<TToken> : IOpenIddictTokenStore<TToken>
     where TToken : CitsOpenIddictFreeSqlToken
 {
-
-
-
     public CitsOpenIddictFreeSqlTokenStore(IFreeSql<CitsOpenIddictFreeSqlMark> freeSql, IMemoryCache cache)
     {
         Cache = cache;
@@ -306,7 +299,7 @@ public class CitsOpenIddictFreeSqlTokenStore<TToken> : IOpenIddictTokenStore<TTo
             throw new ArgumentNullException(nameof(token));
         }
 
-        if(string.IsNullOrEmpty(token.AuthorizationId))
+        if (string.IsNullOrEmpty(token.AuthorizationId))
         {
             return null;
         }

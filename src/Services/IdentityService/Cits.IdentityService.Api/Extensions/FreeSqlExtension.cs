@@ -17,7 +17,6 @@ public static class FreeSqlExtension
                 .UseMonitorCommand(cmd => Console.WriteLine($"Sql：{cmd.CommandText}"))//监听SQL语句
                 .UseAutoSyncStructure(true) //自动同步实体结构到数据库，FreeSql不会扫描程序集，只有CRUD时才会生成表。
                 .Build();
-            fsql.CreateUnitOfWork();
             return fsql;
         };
         builder.Services.AddSingleton<IFreeSql>(fsqlFactory);
