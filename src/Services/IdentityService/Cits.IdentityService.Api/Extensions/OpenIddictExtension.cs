@@ -1,6 +1,7 @@
 ﻿using Cits.IdentityService.Api.Workers;
 using Cits.IdentityService.Domain.EntityFramework;
 using Cits.OpenIddict.FreeSql;
+using FreeSql.Internal;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microsoft.Extensions.Hosting;
@@ -19,6 +20,7 @@ public static class OpenIddictExtension
         {
             IFreeSql<CitsOpenIddictFreeSqlMark> fsql = new FreeSql.FreeSqlBuilder()
                 .UseConnectionString(FreeSql.DataType.Sqlite, @"Data Source=freedb_openid.db")
+                .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower)
                 //.UseMonitorCommand(cmd => Console.WriteLine($"Sql：{cmd.CommandText}"))//监听SQL语句
                 .UseAutoSyncStructure(true) //自动同步实体结构到数据库，FreeSql不会扫描程序集，只有CRUD时才会生成表。
                 .Build<CitsOpenIddictFreeSqlMark>();
@@ -43,11 +45,11 @@ public static class OpenIddictExtension
                 // Enable the client credentials flow.
                 options.AllowClientCredentialsFlow()
                     .AllowPasswordFlow();
-                    //.AllowAuthorizationCodeFlow()
-                    //.AllowImplicitFlow()
-                    //.AllowRefreshTokenFlow()
-                    //.AllowDeviceCodeFlow()
-                    //.AllowHybridFlow();
+                //.AllowAuthorizationCodeFlow()
+                //.AllowImplicitFlow()
+                //.AllowRefreshTokenFlow()
+                //.AllowDeviceCodeFlow()
+                //.AllowHybridFlow();
 
                 // Register the signing and encryption credentials.
                 options.AddDevelopmentEncryptionCertificate()
@@ -113,7 +115,7 @@ public static class OpenIddictExtension
                 // Enable the client credentials flow.
                 options.AllowClientCredentialsFlow()
                     .AllowPasswordFlow();
-                    //.AllowAuthorizationCodeFlow();  //启用前需要先加好endpoint
+                //.AllowAuthorizationCodeFlow();  //启用前需要先加好endpoint
 
                 // Register the signing and encryption credentials.
                 options.AddDevelopmentEncryptionCertificate()

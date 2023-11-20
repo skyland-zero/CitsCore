@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using FreeSql.DataAnnotations;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Cits.OpenIddict.FreeSql.Models;
@@ -27,6 +28,7 @@ public class CitsOpenIddictFreeSqlAuthorization<TKey> : CitsOpenIddictFreeSqlAut
 /// Represents an OpenIddict authorization.
 /// </summary>
 [DebuggerDisplay("Id = {Id.ToString(),nq} ; Subject = {Subject,nq} ; Type = {Type,nq} ; Status = {Status,nq}")]
+[Table(Name = "OpenIddictAuthorizations")]
 public class CitsOpenIddictFreeSqlAuthorization<TKey, TApplication, TToken>
     where TKey : notnull, IEquatable<TKey>
     where TApplication : class
@@ -35,11 +37,13 @@ public class CitsOpenIddictFreeSqlAuthorization<TKey, TApplication, TToken>
     /// <summary>
     /// Gets or sets the application associated with the current authorization.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ApplicationId { get; set; }
 
     /// <summary>
     /// Gets or sets the concurrency token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ConcurrencyToken { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
@@ -50,6 +54,7 @@ public class CitsOpenIddictFreeSqlAuthorization<TKey, TApplication, TToken>
     /// <summary>
     /// Gets or sets the unique identifier associated with the current authorization.
     /// </summary>
+    [Column(IsPrimary = true)]
     public virtual TKey? Id { get; set; }
 
     /// <summary>
@@ -68,20 +73,27 @@ public class CitsOpenIddictFreeSqlAuthorization<TKey, TApplication, TToken>
     /// <summary>
     /// Gets or sets the status of the current authorization.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? Status { get; set; }
 
     /// <summary>
     /// Gets or sets the subject associated with the current authorization.
     /// </summary>
+    [Column(StringLength = 400)]
     public virtual string? Subject { get; set; }
-
-    /// <summary>
-    /// Gets the list of tokens associated with the current authorization.
-    /// </summary>
-    public virtual ICollection<TToken> Tokens { get; } = new HashSet<TToken>();
 
     /// <summary>
     /// Gets or sets the type of the current authorization.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? Type { get; set; }
+
+    /// <summary>
+    /// Gets the list of tokens associated with the current authorization.
+    /// </summary>
+    [Navigate(nameof(CitsOpenIddictFreeSqlToken.AuthorizationId))]
+    public virtual List<TToken> Tokens { get; set; }
+
+    [Navigate(nameof(ApplicationId))]
+    public virtual CitsOpenIddictFreeSqlApplication Application { get; set; }
 }

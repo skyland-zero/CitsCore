@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using FreeSql.DataAnnotations;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Cits.OpenIddict.FreeSql.Models;
@@ -19,11 +20,14 @@ public class CitsOpenIddictFreeSqlScope : CitsOpenIddictFreeSqlScope<string>
 /// Represents an OpenIddict scope.
 /// </summary>
 [DebuggerDisplay("Id = {Id.ToString(),nq} ; Name = {Name,nq}")]
+[Table(Name = "OpenIddictScopes")]
+[Index(nameof(Name), nameof(Name))]
 public class CitsOpenIddictFreeSqlScope<TKey> where TKey : notnull, IEquatable<TKey>
 {
     /// <summary>
     /// Gets or sets the concurrency token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ConcurrencyToken { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
@@ -54,11 +58,13 @@ public class CitsOpenIddictFreeSqlScope<TKey> where TKey : notnull, IEquatable<T
     /// <summary>
     /// Gets or sets the unique identifier associated with the current scope.
     /// </summary>
+    [Column(IsPrimary = true)]
     public virtual TKey? Id { get; set; }
 
     /// <summary>
     /// Gets or sets the unique name associated with the current scope.
     /// </summary>
+    [Column(StringLength = 200)]
     public virtual string? Name { get; set; }
 
     /// <summary>

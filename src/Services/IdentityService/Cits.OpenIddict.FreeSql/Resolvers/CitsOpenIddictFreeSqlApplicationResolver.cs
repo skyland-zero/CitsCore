@@ -30,7 +30,7 @@ public sealed class CitsOpenIddictFreeSqlApplicationResolver : IOpenIddictApplic
             return store;
         }
 
-        
+
 
         var type = _cache.GetOrAdd(typeof(TApplication), key =>
         {

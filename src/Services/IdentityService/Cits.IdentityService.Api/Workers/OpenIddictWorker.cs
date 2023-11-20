@@ -1,5 +1,4 @@
-﻿using Cits.IdentityService.Domain.EntityFramework;
-using OpenIddict.Abstractions;
+﻿using OpenIddict.Abstractions;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace Cits.IdentityService.Api.Workers;

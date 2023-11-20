@@ -10,4 +10,8 @@
     <None Remove="model.dio" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FreeSql" Version="3.2.805" />
+  </ItemGroup>
+
 </Project>

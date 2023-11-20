@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using FreeSql.DataAnnotations;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Cits.OpenIddict.FreeSql.Models;
@@ -27,19 +28,19 @@ public class CitsOpenIddictFreeSqlApplication<TKey> : CitsOpenIddictFreeSqlAppli
 /// Represents an OpenIddict application.
 /// </summary>
 [DebuggerDisplay("Id = {Id.ToString(),nq} ; ClientId = {ClientId,nq} ; Type = {Type,nq}")]
+[Table(Name = "OpenIddictApplications")]
+[Index(nameof(ClientId), nameof(ClientId), true)]
 public class CitsOpenIddictFreeSqlApplication<TKey, TAuthorization, TToken>
     where TKey : notnull, IEquatable<TKey>
     where TAuthorization : class
     where TToken : class
 {
-    /// <summary>
-    /// Gets the list of the authorizations associated with this application.
-    /// </summary>
-    public virtual ICollection<TAuthorization> Authorizations { get; } = new HashSet<TAuthorization>();
+
 
     /// <summary>
     /// Gets or sets the client identifier associated with the current application.
     /// </summary>
+    [Column(StringLength = 100)]
     public virtual string? ClientId { get; set; }
 
     /// <summary>
@@ -52,11 +53,13 @@ public class CitsOpenIddictFreeSqlApplication<TKey, TAuthorization, TToken>
     /// <summary>
     /// Gets or sets the concurrency token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ConcurrencyToken { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
     /// Gets or sets the consent type associated with the current application.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ConsentType { get; set; }
 
     /// <summary>
@@ -75,6 +78,7 @@ public class CitsOpenIddictFreeSqlApplication<TKey, TAuthorization, TToken>
     /// <summary>
     /// Gets or sets the unique identifier associated with the current application.
     /// </summary>
+    [Column(IsPrimary = true)]
     public virtual TKey? Id { get; set; }
 
     /// <summary>
@@ -113,12 +117,20 @@ public class CitsOpenIddictFreeSqlApplication<TKey, TAuthorization, TToken>
     public virtual string? Requirements { get; set; }
 
     /// <summary>
-    /// Gets the list of the tokens associated with this application.
-    /// </summary>
-    public virtual ICollection<TToken> Tokens { get; } = new HashSet<TToken>();
-
-    /// <summary>
     /// Gets or sets the application type associated with the current application.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? Type { get; set; }
+
+    /// <summary>
+    /// Gets the list of the authorizations associated with this application.
+    /// </summary>
+    [Navigate(nameof(CitsOpenIddictFreeSqlToken.ApplicationId))]
+    public virtual List<TAuthorization> Authorizations { get; set; }
+
+    /// <summary>
+    /// Gets the list of the tokens associated with this application.
+    /// </summary>
+    [Navigate(nameof(CitsOpenIddictFreeSqlToken.ApplicationId))]
+    public virtual List<TToken> Tokens { get; set; }
 }

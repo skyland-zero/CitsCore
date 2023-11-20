@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
+﻿using FreeSql.DataAnnotations;
+using System.Diagnostics;
 
 namespace Cits.OpenIddict.FreeSql.Models;
 
@@ -27,6 +27,9 @@ public class CitsOpenIddictFreeSqlToken<TKey> : CitsOpenIddictFreeSqlToken<TKey,
 /// Represents an OpenIddict token.
 /// </summary>
 [DebuggerDisplay("Id = {Id.ToString(),nq} ; Subject = {Subject,nq} ; Type = {Type,nq} ; Status = {Status,nq}")]
+[Table(Name = "OpenIddictTokens")]
+[Index(nameof(ReferenceId), nameof(ReferenceId), true)]
+[Index(nameof(ApplicationId) + nameof(Id), $"{nameof(ApplicationId)}{nameof(Id)},{nameof(Status)},{nameof(Subject)},{nameof(Type)}")]
 public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     where TKey : notnull, IEquatable<TKey>
     where TApplication : class
@@ -45,6 +48,7 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// <summary>
     /// Gets or sets the concurrency token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? ConcurrencyToken { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
@@ -60,6 +64,7 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// <summary>
     /// Gets or sets the unique identifier associated with the current token.
     /// </summary>
+    [Column(IsPrimary = true)]
     public virtual TKey? Id { get; set; }
 
     /// <summary>
@@ -73,7 +78,6 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// Gets or sets the additional properties serialized as a JSON object,
     /// or <see langword="null"/> if no bag was associated with the current token.
     /// </summary>
-    [StringSyntax(StringSyntaxAttribute.Json)]
     public virtual string? Properties { get; set; }
 
     /// <summary>
@@ -87,22 +91,36 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// Note: this property is only used for reference tokens
     /// and may be hashed or encrypted for security reasons.
     /// </summary>
+    [Column(StringLength = 100)]
     public virtual string? ReferenceId { get; set; }
 
     /// <summary>
     /// Gets or sets the status of the current token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? Status { get; set; }
 
     /// <summary>
     /// Gets or sets the subject associated with the current token.
     /// </summary>
+    [Column(StringLength = 400)]
     public virtual string? Subject { get; set; }
 
     /// <summary>
     /// Gets or sets the type of the current token.
     /// </summary>
+    [Column(StringLength = 50)]
     public virtual string? Type { get; set; }
 
+    /// <summary>
+    /// 导航属性
+    /// </summary>
+    [Navigate(nameof(AuthorizationId))]
     public virtual TAuthorization Authorization { get; set; }
+
+    /// <summary>
+    /// 导航属性
+    /// </summary>
+    [Navigate(nameof(ApplicationId))]
+    public virtual TApplication Application { get; set; }
 }
