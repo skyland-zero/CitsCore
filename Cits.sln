@@ -7,23 +7,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E85E4ED-E62
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{5D202AEC-814B-4E90-BC1A-C02DC7D7789B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.ServiceDefaults", "src\Services\Cits.ServiceDefaults\Cits.ServiceDefaults.csproj", "{57517B2A-B4FE-4758-A1F0-C6E9541582B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.ServiceDefaults", "src\Services\Cits.ServiceDefaults\Cits.ServiceDefaults.csproj", "{57517B2A-B4FE-4758-A1F0-C6E9541582B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.AppHost.AppHost", "src\Cits.AppHost\Cits.AppHost.AppHost\Cits.AppHost.AppHost.csproj", "{3111511B-0235-4822-B1A4-EF1162E17D66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.AppHost.AppHost", "src\Cits.AppHost\Cits.AppHost.AppHost\Cits.AppHost.AppHost.csproj", "{3111511B-0235-4822-B1A4-EF1162E17D66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityService", "IdentityService", "{C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Api", "src\Services\IdentityService\Cits.IdentityService.Api\Cits.IdentityService.Api.csproj", "{32B7954D-DBC5-4BD6-9C78-E0E1C29D2ADC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.IdentityService.Domain", "src\Services\IdentityService\Cits.IdentityService.Domain\Cits.IdentityService.Domain.csproj", "{C7C093DC-F1EE-473A-857C-853772035364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Domain", "src\Services\IdentityService\Cits.IdentityService.Domain\Cits.IdentityService.Domain.csproj", "{C7C093DC-F1EE-473A-857C-853772035364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.IdentityService.Application", "src\Services\IdentityService\Cits.IdentityService.Application\Cits.IdentityService.Application.csproj", "{F1F9F3E5-2A23-453E-B129-429EE2191D59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Application", "src\Services\IdentityService\Cits.IdentityService.Application\Cits.IdentityService.Application.csproj", "{F1F9F3E5-2A23-453E-B129-429EE2191D59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.IdentityService.Application.Contracts", "src\Services\IdentityService\Cits.IdentityService.Application.Contracts\Cits.IdentityService.Application.Contracts.csproj", "{ED7B2E5F-FD9A-4BE8-BA89-2F1209699730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Application.Contracts", "src\Services\IdentityService\Cits.IdentityService.Application.Contracts\Cits.IdentityService.Application.Contracts.csproj", "{ED7B2E5F-FD9A-4BE8-BA89-2F1209699730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.IdentityService.Domain.Shared", "src\Services\IdentityService\Cits.IdentityService.Domain.Shared\Cits.IdentityService.Domain.Shared.csproj", "{2E669B71-0BBE-4A21-9BB0-A78F587A36DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.IdentityService.Domain.Shared", "src\Services\IdentityService\Cits.IdentityService.Domain.Shared\Cits.IdentityService.Domain.Shared.csproj", "{2E669B71-0BBE-4A21-9BB0-A78F587A36DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.Core.Domain", "src\Services\Cits.Core.Domain\Cits.Core.Domain.csproj", "{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.Core.Domain", "src\Services\Cits.Core.Domain\Cits.Core.Domain.csproj", "{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.OpenIddict.FreeSql.Models", "src\Services\IdentityService\Cits.OpenIddict.FreeSql.Models\Cits.OpenIddict.FreeSql.Models.csproj", "{67A49515-5A3A-404D-9B18-96FD3E8C091F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.OpenIddict.FreeSql", "src\Services\IdentityService\Cits.OpenIddict.FreeSql\Cits.OpenIddict.FreeSql.csproj", "{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A49515-5A3A-404D-9B18-96FD3E8C091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A49515-5A3A-404D-9B18-96FD3E8C091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A49515-5A3A-404D-9B18-96FD3E8C091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A49515-5A3A-404D-9B18-96FD3E8C091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +90,8 @@ Global
 		{ED7B2E5F-FD9A-4BE8-BA89-2F1209699730} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{2E669B71-0BBE-4A21-9BB0-A78F587A36DD} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{CE1FC5EC-F8CC-46CD-9103-B3B2C52CBB17} = {5D202AEC-814B-4E90-BC1A-C02DC7D7789B}
+		{67A49515-5A3A-404D-9B18-96FD3E8C091F} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
+		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7669EF27-891D-4E9F-BFF6-C2512126492F}

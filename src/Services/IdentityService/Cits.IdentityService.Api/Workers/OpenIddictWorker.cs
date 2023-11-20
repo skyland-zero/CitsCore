@@ -38,7 +38,7 @@ public class OpenIddictWorker : IHostedService
             });
         }
 
-        if(await manager.FindByClientIdAsync("resource_owner_password") is null)
+        if (await manager.FindByClientIdAsync("resource_owner_password") is null)
         {
             await manager.CreateAsync(new OpenIddictApplicationDescriptor
             {

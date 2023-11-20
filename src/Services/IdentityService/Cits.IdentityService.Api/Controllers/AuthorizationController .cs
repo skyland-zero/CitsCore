@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
-using static OpenIddict.Abstractions.OpenIddictConstants;
 using System.Security.Claims;
+using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace Cits.IdentityService.Api.Controllers;
 

@@ -1,5 +1,4 @@
-﻿using Cits.Core.Domain.Entities;
-using FreeSql.Extensions.EfCoreFluentApi;
+﻿using FreeSql.Extensions.EfCoreFluentApi;
 
 namespace Cits.IdentityService.Domain.Users;
 
