@@ -40,7 +40,7 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// <summary>
     /// Gets or sets the authorization associated with the current token.
     /// </summary>
-    public virtual TAuthorization? Authorization { get; set; }
+    public virtual string? AuthorizationId { get; set; }
 
     /// <summary>
     /// Gets or sets the concurrency token.
@@ -103,4 +103,6 @@ public class CitsOpenIddictFreeSqlToken<TKey, TApplication, TAuthorization>
     /// Gets or sets the type of the current token.
     /// </summary>
     public virtual string? Type { get; set; }
+
+    public virtual TAuthorization Authorization { get; set; }
 }

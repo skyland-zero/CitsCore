@@ -150,12 +150,6 @@ public class CitsOpenIddictFreeSqlApplicationStore<TApplication> : IOpenIddictAp
             throw new ArgumentException(SR.GetResourceString(SR.ID0143), nameof(uri));
         }
 
-        // To optimize the efficiency of the query a bit, only applications whose stringified
-        // RedirectUris property contains the specified URI are returned. Once the applications
-        // are retrieved, a second pass is made to ensure only valid elements are returned.
-        // Implementers that use this method in a hot path may want to override this method
-        // to use SQL Server 2016 functions like JSON_VALUE to make the query more efficient.
-
         return ExecuteAsync(cancellationToken);
 
         async IAsyncEnumerable<TApplication> ExecuteAsync([EnumeratorCancellation] CancellationToken cancellationToken)
@@ -163,7 +157,7 @@ public class CitsOpenIddictFreeSqlApplicationStore<TApplication> : IOpenIddictAp
             var applications = await FreeSql.Select<TApplication>()
                 .Where(application => application.RedirectUris!.Contains(uri))
                 .ToListAsync(cancellationToken);
-            //TODO 查询优化，参考MongoDB
+            //TODO 查询优化，参考官方库
             foreach (var application in applications)
             {
                 var uris = await GetRedirectUrisAsync(application, cancellationToken);
