@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.OpenIddict.FreeSql.Mod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.OpenIddict.FreeSql", "src\Services\IdentityService\Cits.OpenIddict.FreeSql\Cits.OpenIddict.FreeSql.csproj", "{7B4FE66E-7EB9-45D5-A217-C6883196B6A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.AppHost", "src\Cits\Cits.AppHost\Cits.AppHost.csproj", "{0BC8CE8B-C936-49BB-8160-2116AC0365A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cits.AppHost", "src\Cits\Cits.AppHost\Cits.AppHost.csproj", "{0BC8CE8B-C936-49BB-8160-2116AC0365A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cits.Core", "src\Cits.Core\Cits.Core.csproj", "{52BA7B1D-8416-4424-94D8-1BF53D867D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BC8CE8B-C936-49BB-8160-2116AC0365A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BA7B1D-8416-4424-94D8-1BF53D867D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BA7B1D-8416-4424-94D8-1BF53D867D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BA7B1D-8416-4424-94D8-1BF53D867D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BA7B1D-8416-4424-94D8-1BF53D867D90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{67A49515-5A3A-404D-9B18-96FD3E8C091F} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{7B4FE66E-7EB9-45D5-A217-C6883196B6A8} = {C1F7DA6B-2EDB-456C-BC16-FEF37FA72625}
 		{0BC8CE8B-C936-49BB-8160-2116AC0365A0} = {9E85E4ED-E62F-4523-887B-BDC881737DFE}
+		{52BA7B1D-8416-4424-94D8-1BF53D867D90} = {9E85E4ED-E62F-4523-887B-BDC881737DFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7669EF27-891D-4E9F-BFF6-C2512126492F}

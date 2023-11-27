@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore;
+﻿using Cits.Core.Dto;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace Cits.IdentityService.Api.Controllers;
@@ -44,7 +46,7 @@ public class AuthorizationController : ControllerBase
             // Otherwise, only store the claim in the access tokens.
             _ => new[] { Destinations.AccessToken }
         });
-
+        
         return SignIn(new ClaimsPrincipal(identity), OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
     }
 }

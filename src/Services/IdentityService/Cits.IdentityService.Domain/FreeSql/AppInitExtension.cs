@@ -30,6 +30,7 @@ public static class AppInitExtension
     /// <param name="freeSql"></param>
     private static void SyncStructure(IFreeSql freeSql)
     {
+        //TODO 应该单独启动一个控制台之类的进行迁移，单独启动进行表结构迁移
         freeSql.CodeFirst.SyncStructure<User>();
     }
 
