@@ -44,4 +44,5 @@ public class User : EntityBase
     /// 启用
     /// </summary>
     public bool IsEnable = true;
+    
 }

@@ -12,6 +12,9 @@ builder.ConfigureFreeSql();
 //builder.ConfigureOpenIddictWithEfCore();
 builder.ConfigureOpenIddictWithFreeSql();
 
+//注入应用服务
+builder.Services.AddAppServices();
+
 var app = builder.Build();
 
 //输出程序启动日志

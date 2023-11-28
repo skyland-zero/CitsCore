@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Cits.Core\Cits.Core.csproj" />
+    <ProjectReference Include="..\Cits.IdentityService.Domain\Cits.IdentityService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

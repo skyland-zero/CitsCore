@@ -5,7 +5,6 @@ using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace Cits.IdentityService.Api.Controllers;
@@ -26,7 +25,7 @@ public class AuthorizationController : ControllerBase
         // if client_id or client_secret are invalid, this action won't be invoked.
 
         var application = await _applicationManager.FindByClientIdAsync(request.ClientId) ??
-            throw new InvalidOperationException("The application cannot be found.");
+                          throw new InvalidOperationException("The application cannot be found.");
 
         // Create a new ClaimsIdentity containing the claims that
         // will be used to create an id_token, a token or a code.
@@ -46,7 +45,7 @@ public class AuthorizationController : ControllerBase
             // Otherwise, only store the claim in the access tokens.
             _ => new[] { Destinations.AccessToken }
         });
-        
+
         return SignIn(new ClaimsPrincipal(identity), OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
     }
 }
