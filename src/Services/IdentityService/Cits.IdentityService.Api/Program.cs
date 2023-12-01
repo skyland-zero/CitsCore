@@ -1,3 +1,7 @@
+using Cits.Core.IdGenerator;
+using Cits.IdentityService.Domain.Users;
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //注入微服务默认服务
@@ -11,6 +15,11 @@ builder.ConfigureFreeSql();
 //注入OpenIddict相关
 //builder.ConfigureOpenIddictWithEfCore();
 builder.ConfigureOpenIddictWithFreeSql();
+
+//注入Id生成器
+builder.AddIdGenerator();
+
+builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
 
 //注入应用服务
 builder.Services.AddAppServices();

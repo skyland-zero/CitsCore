@@ -14,11 +14,13 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
+    [HttpPost("Login")]
     public async Task<IActionResult> Login(LoginInput input, CancellationToken cancellationToken)
     {
         return null;
     }
 
+    [HttpPost("Register")]
     public async Task<IActionResult> Register(UserRegisterInput input, CancellationToken cancellationToken)
     {
         return null;
