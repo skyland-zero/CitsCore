@@ -7,4 +7,5 @@ public class ServiceOptions
     public string Name { get; set; } = string.Empty;
     
     public ushort WorkerId { get; set; } = 1;
+    
 }
